@@ -1,0 +1,73 @@
+name: deploy
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Checkout"
+      uses: actions/checkout@v2
+    - name: "Cache setup"
+      id: cache-setup
+      run: |
+        mkdir -p "$HOME"/.cache/xml2rfc
+        echo "::set-output name=path::$HOME/.cache/xml2rfc"
+        date -u "+::set-output name=date::%FT%T"
+    - name: "Cache references"
+      uses: actions/cache@v2
+      with:
+        path: ${{ steps.cache-setup.outputs.path }}
+        key: refcache-${{ steps.cache-setup.outputs.date }}
+        restore-keys: |
+          refcache-${{ steps.cache-setup.outputs.date }}
+          refcache-
+    - name: "Build drafts"
+      uses: martinthomson/i-d-template@v1
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: stb-tls13
+        path: draft-stb-tls13.*
+        retention-days: 3
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: stb-tls13
+    - name: Display structure of downloaded files
+      run: ls -r
+    - name: Create release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: ${{ github.ref }}
+        draft: false
+        prerelease: false
+    - name: Upload html asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./draft-stb-tls13.html
+        asset_name: draft-stb-tls13.html
+        asset_content_type: application/html
+    - name: Upload txt asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./draft-stb-tls13.txt
+        asset_name: draft-stb-tls13.txt
+        asset_content_type: application/txt
