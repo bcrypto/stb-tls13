@@ -1,4 +1,4 @@
-# STB Cryptographic Parameters {#BTLS}
+# Cryptographic Parameters for TLS {#BTLS}
 
 ## Cipher Suites
 

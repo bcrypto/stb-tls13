@@ -1375,7 +1375,7 @@ Steps:
 8. If `S_0 != t`, then return `0`.
 9. Return `1`.
 
-# STB Cryptographic Parameters {#BTLS}
+# Cryptographic Parameters for TLS {#BTLS}
 
 ## Cipher Suites
 
