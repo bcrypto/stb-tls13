@@ -100,6 +100,20 @@ informative:
         name: Vladislav Semenov
         org: Belarusian State University
 
+  BloLee19:
+    title: "On the Multi-user Security of Short Schnorr Signatures with
+      Preprocessing"
+    target: https://eprint.iacr.org/2019/1105
+    date: 2019
+    rc: "Proceedings of EUROCRYPT 2022, pp. 614-643"
+    author:
+      -
+        ins: J. Blocki
+        name: Jeremiah Blocki
+      -
+        ins: S. Lee
+        name: Seunghoon Lee
+
   Che10:
     title: "Discrete Logarithm Problems with Auxiliary Inputs"
     date: 2010
@@ -229,8 +243,8 @@ in Belarus and defines their use as TLS 1.3 cryptographic parameters. These
 algorithms are deployed across Belarusian IT systems, powering public key
 infrastructures, legally recognized digital signatures, identity cards, VPN
 services, etc. The specification aims to improve the recognition of the
-algorithms, in particular, to obtain standardized code points for the
-respective TLS parameters. This would ensure interoperability and facilitate
+algorithms, in particular, to obtain assigned code points for the respective
+TLS parameters. This would ensure interoperability and facilitate
 interactions with external systems.
 
 National standards of Belarus are designated by the abbreviation STB.
@@ -449,8 +463,7 @@ primitive, all other Belt algorithms are built on top of it.
 
 The `belt-hash` algorithm implements 256-bit hashing. When processing two
 128-bit blocks of data, `belt-block` is invoked 3 times, i.e., the hash rate is
-approximately 2/3 of the encryption rate. The `belt-hash` algorithm is analyzed
-in {{Agi26}}.
+approximately 2/3 of the encryption rate.
 
 The `belt-che256` algorithms (encryption and decryption) implement AEAD in the
 CHE (Counter-Hash-Encrypt) mode {{Agi20}}. This mode is similar to the
@@ -618,7 +631,6 @@ Steps:
 
 {:aside}
 > Note: if `X == NIL`, then `n == 0` and the steps 5 and 6 are not performed.
-
 
 ## Authenticated Encryption {#BELT.AE}
 
@@ -1475,6 +1487,51 @@ enumeration (see {{RFC9846}}, Section 4.3.3):
 
 The identifiers are used in the `signature_algorithms` and
 `signature_algorithms_cert` extensions.
+
+# IANA Considerations {#IANA}
+
+This specification requests/registers the following entries to the "TLS Cipher
+Suites" registry:
+
+| Value (TBU)  | Description                   | DTLS-OK | Recommended | Reference     |
+|--------------|-------------------------------|---------|-------------|---------------|
+| `0xFF, 0x1D` | `TLS_BELT_CHE256_BELT_HASH`   | N       | N           | This document |
+| `0xFF, 0x1E` | `TLS_BASH_PRG_AE2561_BASH256` | N       | N           | This document |
+
+This specification requests/registers the following entries to the "TLS
+Supported Groups" registry:
+
+| Value (TBU) | Description       | DTLS-OK | Recommended | Reference     |
+|-------------|-------------------|---------|-------------|---------------|
+| `0xFE01`    | `bign-curve256v1` | N       | N           | This document |
+| `0xFE02`    | `bign-curve384v1` | N       | N           | This document |
+| `0xFE03`    | `bign-curve512v1` | N       | N           | This document |
+
+This specification requests/registers the following entries to the "TLS
+SignatureScheme" registry:
+
+| Value (TBU) | Description         | Recommended | Reference     |
+|-------------|---------------------|-------------|---------------|
+| `0xFE01`    | `bign-with-hbelt`   | N           | This document |
+| `0xFE02`    | `bign-with-bash384` | N           | This document |
+| `0xFE03`    | `bign-with-bash512` | N           | This document |
+
+{:aside}
+> Note: The listed values are placeholders selected from the IANA private-use
+> ranges. They are intended for temporary use in pre-IANA-assignment
+> implementations of {{Stb90}}. "TBU" indicates that these placeholders will be
+> replaced by new IANA-assigned values.
+
+# Security Considerations {#SEC}
+
+The security of TLS 1.3 with STB cryptographic parameters depends on the
+the underlying algorithms.
+
+The security of `belt-hash` and `belt-che256` is analyzed in {{Agi26}} and
+{{Agi20}}, respectively. The security-driven design rationale of the Bash
+algorithms is grounded in {{AMMS17}}. The security of the Bign signature
+algorithms, which instantiate the short Schnorr signature, is justified, for
+example, in {{BloLee19}}.
 
 --- back
 

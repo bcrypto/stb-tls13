@@ -14,8 +14,7 @@ primitive, all other Belt algorithms are built on top of it.
 
 The `belt-hash` algorithm implements 256-bit hashing. When processing two
 128-bit blocks of data, `belt-block` is invoked 3 times, i.e., the hash rate is
-approximately 2/3 of the encryption rate. The `belt-hash` algorithm is analyzed
-in {{Agi26}}.
+approximately 2/3 of the encryption rate.
 
 The `belt-che256` algorithms (encryption and decryption) implement AEAD in the
 CHE (Counter-Hash-Encrypt) mode {{Agi20}}. This mode is similar to the
@@ -183,7 +182,6 @@ Steps:
 
 {:aside}
 > Note: if `X == NIL`, then `n == 0` and the steps 5 and 6 are not performed.
-
 
 ## Authenticated Encryption {#BELT.AE}
 

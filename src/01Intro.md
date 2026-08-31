@@ -24,8 +24,8 @@ in Belarus and defines their use as TLS 1.3 cryptographic parameters. These
 algorithms are deployed across Belarusian IT systems, powering public key
 infrastructures, legally recognized digital signatures, identity cards, VPN
 services, etc. The specification aims to improve the recognition of the
-algorithms, in particular, to obtain standardized code points for the
-respective TLS parameters. This would ensure interoperability and facilitate
+algorithms, in particular, to obtain assigned code points for the respective
+TLS parameters. This would ensure interoperability and facilitate
 interactions with external systems.
 
 National standards of Belarus are designated by the abbreviation STB.

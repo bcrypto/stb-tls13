@@ -100,6 +100,20 @@ informative:
         name: Vladislav Semenov
         org: Belarusian State University
 
+  BloLee19:
+    title: "On the Multi-user Security of Short Schnorr Signatures with
+      Preprocessing"
+    target: https://eprint.iacr.org/2019/1105
+    date: 2019
+    rc: "Proceedings of EUROCRYPT 2022, pp. 614-643"
+    author:
+      -
+        ins: J. Blocki
+        name: Jeremiah Blocki
+      -
+        ins: S. Lee
+        name: Seunghoon Lee
+
   Che10:
     title: "Discrete Logarithm Problems with Auxiliary Inputs"
     date: 2010
