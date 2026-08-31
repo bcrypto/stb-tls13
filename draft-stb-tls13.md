@@ -2,7 +2,7 @@
 title: "STB Cryptographic Parameters for Transport Layer Security (TLS)
   Protocol Version 1.3"
 abbrev: stb-tls13
-docname: draft-stb-tls13-latest
+docname: draft-stb-tls13-00
 submissiontype: independent
 category: info
 v: 3
@@ -1427,7 +1427,7 @@ There are no usage limits for `bash-prg-ae2561` keys.
 The Diffie-Hellman protocol is instantiated as follows.
 
 1. The base cyclic group is a group of elliptic curve points that
-   satisfies the `bign-curves` requirements {{BIGN.Curves}}.
+   satisfies the `bign-curves` requirements (see {{BIGN.Curves}}).
 
 2. Ephemeral private and public keys are generated using the
    `bign-genkeypair` algorithm.
@@ -1440,7 +1440,7 @@ The Diffie-Hellman protocol is instantiated as follows.
    opposite party (point on the curve). Curve operations are defined in {{BIGN}}.
 
 5. The shared secret `K`, an affine point of the elliptic curve, is encoded as
-   `Point2Bin(K, 4l)` {{BIGN.Curves}}, where `l` is the security level.
+   `Point2Bin(K, 4l)` (see {{BIGN.Curves}}), where `l` is the security level.
 
 ## Elliptic Curves
 

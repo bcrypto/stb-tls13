@@ -2,7 +2,7 @@
 title: "STB Cryptographic Parameters for Transport Layer Security (TLS)
   Protocol Version 1.3"
 abbrev: stb-tls13
-docname: draft-stb-tls13-latest
+docname: draft-stb-tls13-00
 submissiontype: independent
 category: info
 v: 3
