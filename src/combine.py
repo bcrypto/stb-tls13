@@ -35,7 +35,7 @@ print("Merging in order:")
 for f in numbered_files:
     print("  ", f)
 
-with open(output_file, "w", encoding="utf-8") as fout:
+with open(output_file, "w", encoding="utf-8", newline='') as fout:
     for fname in numbered_files:
         path = os.path.join(input_folder, fname)
         with open(path, "r", encoding="utf-8") as fin:

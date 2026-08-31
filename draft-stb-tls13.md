@@ -1476,6 +1476,8 @@ enumeration (see {{RFC9846}}, Section 4.3.3):
 The identifiers are used in the `signature_algorithms` and
 `signature_algorithms_cert` extensions.
 
+--- back
+
 # Recommended Elliptic Curves {#CURVES}
 
 The following elliptic curves are recommended for the Bign family:
