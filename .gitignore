@@ -1,6 +1,6 @@
-.aux
 lib
-draft-stb-tls13.xml
-draft-stb-tls13.txt
 draft-stb-tls13.html
-
+draft-stb-tls13.md
+draft-stb-tls13.txt
+makefile
+!scripts/makefile

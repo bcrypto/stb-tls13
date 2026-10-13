@@ -18,21 +18,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: "Checkout"
-      uses: actions/checkout@v2
-    - name: "Cache setup"
+    - name: Checkout
+      uses: actions/checkout@v6
+    - name: Cache setup
       id: cache-setup
       run: |
         mkdir -p "$HOME"/.cache/xml2rfc
-        echo "::set-output name=path::$HOME/.cache/xml2rfc"
-        date -u "+::set-output name=date::%FT%T"
-    - name: "Cache references"
-      uses: actions/cache@v4
+        echo "path=$HOME/.cache/xml2rfc" >> $GITHUB_OUTPUT
+        echo "date=$(date -u '+%FT%T')" >> $GITHUB_OUTPUT
+    - name: Cache references
+      uses: actions/cache@v5
       with:
         path: ${{ steps.cache-setup.outputs.path }}
         key: refcache-${{ steps.cache-setup.outputs.date }}
         restore-keys: |
           refcache-${{ steps.cache-setup.outputs.date }}
           refcache-
-    - name: "Build drafts"
+    - name: Assemble draft
+      run: |
+          awk 'FNR==1 && NR!=1 {printf "\n"} 1' src/*.md > draft-stb-tls13.md
+          cp -f scripts/makefile .
+    - name: Build draft
       uses: martinthomson/i-d-template@v1
