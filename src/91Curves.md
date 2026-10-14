@@ -6,16 +6,16 @@ The following elliptic curves are recommended for the Bign family:
 * `bign-curve384v1` -- a curve at the security level `l = 192`;
 * `bign-curve512v1` -- a curve at the security level `l = 256`.
 
-The recommended curves satisfy the `bign-curves` requirements 1 -- 11
+The recommended curves satisfy the `bign-curves` requirements 1 -- 12
 and the following additional requirements:
 
-12. `p` is the largest suitable prime that does not exceed `2^{2l}`.
-13. `a = p - 3`.
-14. The numbers `q-1` and `q+1` both have large prime factors.
+13. `p` is the largest suitable prime that does not exceed `2^{2l}`.
+14. `a = p - 3`.
+15. The numbers `q-1` and `q+1` both have large prime factors.
 
-Requirements 12 and 13 speed up reduction modulo `p` and point doubling.
-Requirement 14 provides protection against Cheon's attack {{Che10}}. This attack
-is not directly applicable to the Bign algorithms; the purpose of the
+Requirements 13 and 14 speed up reduction modulo `p` and point doubling.
+Requirement 15 provides protection against Cheon's attack {{Che10}}. This
+attack is not directly applicable to the Bign algorithms; the purpose of the
 requirement is to mitigate risks of using the recommended curves outside of
 Bign.
 

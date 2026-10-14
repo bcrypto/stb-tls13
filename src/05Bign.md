@@ -63,6 +63,7 @@ The full list of requirements, called `bign-curves`, is as follows.
 9.  `(4 a^3 + 27 b^2) mod p != 0`.
 10. `G = (0, y_G)`, where `y_G = b^{(p+1)/4} mod p`.
 11. `q G = O`.
+12. `p + 1 - q < 2^{l+1}`.
 
 Let `GG_q^*` be the set of affine (nonzero) points of `GG_q`. Points of
 `GG_q^*` are encoded as follows.
