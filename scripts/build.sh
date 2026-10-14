@@ -4,7 +4,7 @@
 # \brief Build RFC draft
 # \project stb-tls13
 # \created 2026.09.02
-# \created 2026.10.13
+# \version 2026.10.14
 # *****************************************************************************
 
 scripts_dir=`pwd`
