@@ -20,8 +20,8 @@ In the TLS record protocol, associated data for authenticated encryption
 is composed of the `opaque_type`, `legacy_record_version` and `length` fields
 of the `TLSCiphertext` structure, 5 bytes in total.
 
-When `bash-prg-ae2561` is used, the associated data `I in {0, 1}^{40}` is
-combined with the nonce `S in {0, 1}^{128}` to form the preamble `A`:
+When `bash-prg-ae2561` is used, the associated data `I in {0, 1}^40` is
+combined with the nonce `S in {0, 1}^128` to form the preamble `A`:
 `A <- S || I || Rep(0, 24)`. Step 2.1 (`alpha.absorb(I)`) is skipped during both
 encryption and decryption.
 
@@ -30,7 +30,7 @@ and 32 bytes long, respectively. An authentication tag `T` is appended to a
 ciphertext `Y`, producing the authenticated ciphertext `Y || T` saved to
 `TLSCiphertext.encrypted_record`.
 
-A `belt-che256` key must be updated after processing `2^{32}` TLS records.
+A `belt-che256` key must be updated after processing `2^32` TLS records.
 There are no usage limits for `bash-prg-ae2561` keys.
 
 ## The Diffie-Hellman Protocol
