@@ -53,6 +53,30 @@ informative:
         name: Andrey Afonenko
         org: Belarusian State University
 
+  AGMK02:
+    title: "BelT Block Cipher"
+    target: https://arxiv.org/XXX
+    date: 2002
+    seriesinfo:
+      Upravlenie Zashhhitoj Informacii: "6(4), pp. 407-412 (In Russian)"
+    author:
+      -
+        ins: S. Agievich
+        name: Sergey Agievich
+        org: Belarusian State University
+      -
+        ins: V. Galinskij
+        name: Victor Galinskij
+        org: Belarusian State University
+      -
+        ins: N. Mikulich
+        name: Nikolai Mikulich
+        org: National Center of Information Security of Belarus
+      -
+        ins: Yu. Kharin
+        name: Yuriy Kharin
+        org: Belarusian State University
+
   Agi20:
     title: "The Counter mode with encrypted nonces and its extension to AE"
     target: https://eprint.iacr.org/2020/331
@@ -67,7 +91,7 @@ informative:
 
   Agi26:
     title: "On the security of belt-hash and belt-compress"
-    date: 2026-06
+    date: 2026
     rc: "Pre-proceedings of the 15th Workshop on Current Trends in Cryptology
       (CTCrypt'2026), pp. 445-470"
     author:
@@ -99,6 +123,53 @@ informative:
         ins: V. Semenov
         name: Vladislav Semenov
         org: Belarusian State University
+
+  Bel06:
+    title: "New Proofs for NMAC and HMAC: Security Without
+      Collision-Resistance"
+    target: https://eprint.iacr.org/2006/043
+    date: 2006
+    author:
+      -
+        ins: M. Bellare
+        name: Mihir Bellare
+
+  BDPV11:
+    title: "The Keccak SHA-3 submission"
+    target: https://keccak.team/files/Keccak-submission-3.pdf
+    date: 2011
+    rc: "Submission to NIST (Round 3)"
+    author:
+      -
+        ins: G. Bertoni
+        name: Guido Bertoni
+      -
+        ins: J. Daemen
+        name: Joan Daemen
+      -
+        ins: M. Peters
+        name: Michael Peters
+      -
+        ins: G. Van Assche
+        name: Gilles Van Assche
+
+  BDPV11a:
+    title: "Cryptographic sponge functions"
+    target: https://keccak.team/files/CSF-0.1.pdf
+    date: 2011
+    author:
+      -
+        ins: G. Bertoni
+        name: Guido Bertoni
+      -
+        ins: J. Daemen
+        name: Joan Daemen
+      -
+        ins: M. Peters
+        name: Michael Peters
+      -
+        ins: G. Van Assche
+        name: Gilles Van Assche
 
   BloLee19:
     title: "On the Multi-user Security of Short Schnorr Signatures with
