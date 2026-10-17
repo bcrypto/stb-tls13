@@ -36,12 +36,19 @@ of `bash256`-based HMAC--and, in turn, HKDF--to be justified using the approach
 of {{Bel06}}. Note that another approach is to apply results from
 sponge-based cryptography directly {{BDPV11a}}.
 
+The `bash256` algorithm follows an overwrite mode of sponge-based hash
+functions {{BDPV11}}. In this mode, security guarantees of `bash256`-based
+HMAC--and, in turn, HKDF--can be justified using the approach of {{Bel06}},
+where the underlying `bash-f` algorithm is treated as a classical compression
+function, or directly within the framework of sponge-based cryptography
+{{BDPV11a, Section 5.1.3}}.
+
 The security of the Bign signature algorithms, which instantiate the short
 Schnorr signature, is justified, for example, in {{BloLee19}}. The
 deterministic mode of `bign-sign` avoids drawbacks of the usual
 probabilistic mode, where the weaknesses of RNG / PRNG can yield reuse of
-ephemeral keys and reveal the private key. We recommend using the deterministic
-mode with a randomly generated `t`, the deterministic mode with a fixed `t`,
-and the probabilistic mode, in this order of preference.
+ephemeral keys and thus compromise the private key. We recommend using the
+deterministic mode with a randomly generated `t`, the deterministic mode with a
+fixed `t`, and the probabilistic mode, in this order of preference.
 
 --- back
