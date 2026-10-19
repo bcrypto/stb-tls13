@@ -44,3 +44,11 @@ This document presents a restricted profile of the STB suite, defining only a
 subset of the available algorithms and narrowing their operational parameters.
 The sole exception to this restriction is {{BASH.Auto}}, where the complete
 functionality of the auxiliary sponge automaton is specified.
+
+{:aside}
+> Caution: This document is not a standard and does not have IETF
+> community consensus. It makes use of cryptographic algorithms that are
+> national standards for Belarus. Neither the IETF nor the IRTF has analyzed
+> these algorithms for suitability for any given application, and it may
+> contain either intended or unintended weaknesses.
+
