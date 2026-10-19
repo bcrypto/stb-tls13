@@ -18,9 +18,9 @@ is lower. However, structural constraints on preimages prevent this lower
 security bound from being exploited in TLS 1.3. In particular, the Bign digital
 signature that uses `belt-hash` for internal hashing is potentially affected at
 the security level `l = 256`, where inverting `belt-hash` in under `2^{256}`
-operations could accelerate signature forgery. However, the forgery attack
+operations could accelerate signature forgery. But since the forgery attack
 requires the preimage to be a short string with a highly restricted format,
-rendering it infeasible.
+the attack becomes infeasible.
 
 The security of `belt-che256` is analyzed in {{Agi20}}. The security guarantees
 established in that analysis are justified provided that the total number of
