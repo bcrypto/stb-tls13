@@ -30,18 +30,11 @@ the `TLS_BELT_CHE256_BELT_HASH` ciphersuite, which requires rekeying
 `belt-che256` after processing `2^{32}` TLS records.
 
 The `bash256` algorithm follows an overwrite mode of sponge-based hash
-functions {{BDPV11}}. In this mode, the underlying `bash-f` algorithm serves
-as a classical compression function, thereby allowing security guarantees
-of `bash256`-based HMAC--and, in turn, HKDF--to be justified using the approach
-of {{Bel06}}. Note that another approach is to apply results from
-sponge-based cryptography directly {{BDPV11a}}.
-
-The `bash256` algorithm follows an overwrite mode of sponge-based hash
 functions {{BDPV11}}. In this mode, security guarantees of `bash256`-based
 HMAC--and, in turn, HKDF--can be justified using the approach of {{Bel06}},
 where the underlying `bash-f` algorithm is treated as a classical compression
 function, or directly within the framework of sponge-based cryptography
-{{BDPV11a, Section 5.1.3}}.
+(see Section 5.1.3 of {{BDPV11a}}).
 
 The security of the Bign signature algorithms, which instantiate the short
 Schnorr signature, is justified, for example, in {{BloLee19}}. The
