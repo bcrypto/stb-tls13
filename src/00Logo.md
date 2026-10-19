@@ -135,10 +135,9 @@ informative:
         name: Mihir Bellare
 
   BDPV11:
-    title: "The Keccak SHA-3 submission"
-    target: https://keccak.team/files/Keccak-submission-3.pdf
+    title: "Cryptographic sponge functions"
+    target: https://keccak.team/files/CSF-0.1.pdf
     date: 2011
-    rc: "Submission to NIST (Round 3)"
     author:
       -
         ins: G. Bertoni
@@ -154,9 +153,10 @@ informative:
         name: Gilles Van Assche
 
   BDPV11a:
-    title: "Cryptographic sponge functions"
-    target: https://keccak.team/files/CSF-0.1.pdf
+    title: "The Keccak SHA-3 submission"
+    target: https://keccak.team/files/Keccak-submission-3.pdf
     date: 2011
+    rc: "Submission to NIST (Round 3)"
     author:
       -
         ins: G. Bertoni
