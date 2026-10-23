@@ -55,7 +55,7 @@ informative:
 
   AGMK02:
     title: "BelT Block Cipher"
-    target: https://arxiv.org/XXX
+    target: https://arxiv.org/abs/2610.31178
     date: 2002
     seriesinfo:
       Upravlenie Zashhhitoj Informacii: "6(4), pp. 407-412 (In Russian)"
