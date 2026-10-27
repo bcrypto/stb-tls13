@@ -74,13 +74,11 @@ For example, `BeltH(79, 3) = 0xF1C1AB` (`Int2Bin(79, 8) = 0x4F`).
 >    1. `t <- H[(x - 1) mod 256]`;
 >    2. for `i = 0, 1, ..., 115`:
 >       1. `t <- Clock(t)`;
->    3. `H[x] <- t`.
+>    3. `H[x mod 256] <- t`.
 > 3. Return `H`.
 >
 > Here `Clock(t) = (t_2 ^ t_3 ^ t_7 ^ t_8) t_1 t_2 ... t_7` for
 > `t = t_1 t_2 ... t_8 in {0, 1}^8`.
-
-todo: H[x mod 256] in step 2.3
 
 ### The Transformations `G_r`
 
