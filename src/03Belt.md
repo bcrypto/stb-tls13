@@ -80,6 +80,8 @@ For example, `BeltH(79, 3) = 0xF1C1AB` (`Int2Bin(79, 8) = 0x4F`).
 > Here `Clock(t) = (t_2 ^ t_3 ^ t_7 ^ t_8) t_1 t_2 ... t_7` for
 > `t = t_1 t_2 ... t_8 in {0, 1}^8`.
 
+todo: H[x mod 256] in step 2.3
+
 ### The Transformations `G_r`
 
 The transformations `G_5`, `G_13`, `G_21` map the set `{0, 1}^32` to itself.

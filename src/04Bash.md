@@ -135,7 +135,7 @@ The processed data are encoded as follows:
 | `DATA` | Public input data       | `000010`      |
 | `TEXT` | Plaintext or ciphertext | `000011`      |
 | `OUT`  | Output data             | `000100`      |
-{: #DTYPES title="Data Types in Bash Automaton"}
+{: #DTYPES title="Data Types in the Bash Automaton"}
 
 #### The `start` Command
 

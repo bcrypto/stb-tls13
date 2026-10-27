@@ -5,7 +5,7 @@ abbrev: stb-tls13
 docname: draft-stb-tls13-latest
 submissiontype: independent
 category: info
-v: 3
+v: 1
 lang: en
 ipr: trust200902
 stand_alone: yes
@@ -42,7 +42,7 @@ informative:
     target: https://eprint.iacr.org/2004/024
     date: 2005
     seriesinfo:
-      Vesti NAN Belarusi: "2005(1), pp. 106-112"
+      Vesti NAN Belarusi: "1, pp. 106-112"
     author:
       -
         ins: S. Agievich
