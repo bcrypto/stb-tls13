@@ -4,10 +4,10 @@
 
 This specification defines the following cipher suites for TLS 1.3 {{Stb90}}.
 
-|Cipher Suite                  |Value (TBU)    |AEAD             | Hash       |
+|Cipher Suite                  |Value          |AEAD             | Hash       |
 |------------------------------|---------------|-----------------|------------|
-|`TLS_BELT_CHE256_BELT_HASH`   |`{0xFF, 0x1D}` |`belt-che256`    |`belt-hash` |
-|`TLS_BASH_PRG_AE2561_BASH256` |`{0xFF, 0x1E}` |`bash-prg-ae2561`|`bash256`   |
+|`TLS_BELT_CHE256_BELT_HASH`   |`{0x00, 0x72}` |`belt-che256`    |`belt-hash` |
+|`TLS_BASH_PRG_AE2561_BASH256` |`{0x00, 0x73}` |`bash-prg-ae2561`|`bash256`   |
 {: #SUITES title="STB Cipher Suites"}
 
 Supporting the `TLS_BASH_PRG_AE2561_BASH256` cipher suite is mandated by this
@@ -63,9 +63,9 @@ The group identifiers are added to the `NamedGroup` enumeration (see
 
        enum {
          ...
-         bign_curve256v1(0xFE01), /* TBU */
-         bign_curve384v1(0xFE02), /* TBU */
-         bign_curve512v1(0xFE03)  /* TBU */
+         bign_curve256v1(42),
+         bign_curve384v1(43),
+         bign_curve512v1(44)
          ...
        } NamedGroup;
 
@@ -90,9 +90,9 @@ enumeration (see {{RFC9846}}, Section 4.3.3):
 
        enum {
          ...
-         bign_with_hbelt(0xFE01),     /* TBU */
-         bign_with_bash384(0xFE02),   /* TBU */
-         bign_with_bash512(0xFE03)    /* TBU */
+         bign_with_hbelt(0x0710),
+         bign_with_bash384(0x0711),
+         bign_with_bash512(0x0712)
          ...
        } SignatureScheme;
 
