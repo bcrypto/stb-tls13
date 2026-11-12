@@ -9,6 +9,7 @@ The following elliptic curves are recommended for the Bign family:
 The recommended curves satisfy the `bign-curves` requirements 1 -- 12
 and the following additional requirements:
 
+{:start="13"}
 13. `p` is the largest suitable prime that does not exceed `2^{2l}`.
 14. `a = p - 3`.
 15. The numbers `q-1` and `q+1` both have large prime factors.
