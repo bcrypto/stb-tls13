@@ -9,7 +9,6 @@ v: 1
 lang: en
 ipr: trust200902
 stand_alone: yes
-smart_quotes: yes
 pi: [toc, sortrefs, symrefs]
 
 author:
